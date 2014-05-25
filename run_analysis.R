@@ -38,9 +38,13 @@ A_train<-join(y_train,activity_labels)
 A_final<-rbind(A_test,A_train)
 #Uses descriptive activity names to name the activities in the data set APPLY
 X_final<-cbind(X_final,A_final$Activity)
+
 #Rename the column added (not necessary to know the exact location)
 names(X_final)[names(X_final) == 'A_final$Activity'] <- 'Activity'
 
+# END ->Uses descriptive activity names to name the activities in the data set
+#Remember! the 4th point is in the beginning. Lines 11 & 13
+#Include Subject ID into the main data set
 #reading Subjects files
 subject_test <- read.table("test/subject_test.txt")
 
